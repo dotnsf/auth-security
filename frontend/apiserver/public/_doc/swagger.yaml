@@ -1,0 +1,37 @@
+swagger: '2.0'
+info:
+  description: ログインサンプル API ドキュメント
+  version: 0.0.1
+  title: ログインサンプル REST APIs
+basePath: /api
+tags:
+  - name: api
+    description: Login API
+schemes:
+  - http
+  - https
+paths:
+  /login:
+    post:
+      tags:
+        - api
+      summary: Login
+      description: Login:
+      produces:
+        - application/json
+      consumes:
+        - multipart/form-data
+      parameters:
+        - name: username
+          in: formData
+          type: string
+          description: ユーザー名
+        - name: password
+          in: formData
+          type: string
+          description: パスワード
+      responses:
+        '200':
+          description: 成功
+        '400':
+          description: エラー
